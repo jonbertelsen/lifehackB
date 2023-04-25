@@ -28,6 +28,7 @@
                                             <p>How much does a single cigarette cost you?</p>
                                             <input type="number" step="0.01" name="pricePerCigarette"
                                                    style="padding-bottom: 0px;margin-top: -4px;margin-bottom: 19px;">
+                                            <br/>
                                             <button type="submit" class="btn btn-primary btn-lg mr-2"
                                                     style="margin-top: 1px;padding-bottom: 0px;padding-top: 0px;margin-bottom: 2px;margin-left: 6px;">
                                                 Submit
