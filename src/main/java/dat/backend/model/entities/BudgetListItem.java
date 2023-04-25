@@ -2,9 +2,9 @@ package dat.backend.model.entities;
 
 public class BudgetListItem {
 
-        private String name;
-        private double amount;
-        private String type;
+        private final String name;
+        private final double amount;
+        private final String type;
 
     public BudgetListItem(String name, double amount, String type) {
         this.name = name;
