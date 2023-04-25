@@ -18,12 +18,12 @@ public class BudgetCalculator {
 
     public void addIncomeItem(Item item) {
         incomeItems.add(item);
-        totalIncome += item.getIncomeAmount();
+        totalIncome += item.getAmount();
     }
 
     public void addExpenseItem(Item item) {
         expenseItems.add(item);
-        totalExpenses += item.getExpenseAmount();
+        totalExpenses += item.getAmount();
     }
         public List<Item> getIncomeItems() {
         return incomeItems;

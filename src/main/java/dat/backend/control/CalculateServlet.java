@@ -40,7 +40,7 @@ public class CalculateServlet extends HttpServlet {
 
         if ("add".equals(action)) {
             double amount = Double.parseDouble(amountStr);
-            Item item = new Item(type, name, amount);
+            Item item = new Item(name, amount);
             selectedItems.add(item);
 
             if ("income".equals(type)) {
@@ -52,7 +52,7 @@ public class CalculateServlet extends HttpServlet {
             int index = Integer.parseInt(request.getParameter("index"));
             Item item = selectedItems.remove(index);
 
-            if ("income".equals(item.getType())) {
+            if ("income".equals("")) {
                 totalIncome -= item.getAmount();
             } else {
                 totalExpense -= item.getAmount();
