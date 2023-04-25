@@ -54,8 +54,9 @@
                         <tr>
                             <td class="text-center align-middle">${junk.food}</td>
                             <td class="text-center align-middle">${junk.kcal}<br></td>
-                            <td class="text-center align-middle">${requestScope.totalKcal}<br></td>
                             </c:forEach>
+                            <td class="text-center align-middle">${requestScope.totalKcal}<br></td>
+
 
                         </tr>
 
