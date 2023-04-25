@@ -4,27 +4,24 @@
 <%@page errorPage="error.jsp" isErrorPage="false" %>
 
 <t:pagetemplate>
-    <jsp:attribute name="header">
-         Welcome to the frontpage
-    </jsp:attribute>
 
-    <jsp:attribute name="footer">
-        Welcome to the frontpage
-    </jsp:attribute>
 
     <jsp:body>
 
-        <p>Startcode for 2nd semester </p>
-
-        <c:if test="${sessionScope.user != null}">
-            <p>You are logged in with the role of "${sessionScope.user.role}".</p>
-        </c:if>
-
-        <c:if test="${sessionScope.user == null}">
-            <p>You are not logged in yet. You can do it here: <a
-                    href="login.jsp">Login</a></p>
-        </c:if>
-
+        <t:info>
+            <h1 class="card-title">Velkommen</h1>
+            <p class="card-text">
+                På denne side kan se en masse forskellige lifehacks, der vil hjælpe dig til en nemmere hverdag forhåbentlig
+            </p>
+        </t:info>
+        <t:content>
+            <ul class="list-group bg-white">
+                <a class="link" href="${pageContext.request.contextPath}/runningcalculator.jsp"><li class="list-group-item text-dark">Løbeberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/loancalc.jsp"><li class="list-group-item text-dark">Låneberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/sodaconsumption.jsp"><li class="list-group-item text-dark">Sodavandsindtag</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item text-dark">1rm-beregner</li></a>
+            </ul>
+        </t:content>
     </jsp:body>
 
 </t:pagetemplate>
