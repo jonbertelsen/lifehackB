@@ -5,12 +5,17 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+/*
+This class contains tests for every method in the RunningCalculator class.
+ */
+
 public class RunningCalculatorTest {
 
     private double distance;
     private int time;
     private double speed;
 
+    //Before every test - variables are reset to default values.
     @BeforeEach
     void setupClass(){
         distance = 10.0;
@@ -18,6 +23,12 @@ public class RunningCalculatorTest {
         speed = 10.0;
     }
 
+    /*
+    Test checks the following:
+    Correct calculation with regular numbers.
+    Correct calculation with decimal numbers.
+    Correct handling of invalid arguments.
+     */
     @Test
     void calculateDistanceTest(){
         assertEquals(10.0, RunningCalculator.calculateDistance(time, speed));
@@ -28,6 +39,12 @@ public class RunningCalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> RunningCalculator.calculateDistance(time, speed));
     }
 
+    /*
+    Test checks the following:
+    Correct calculation with regular numbers.
+    Correct calculation with decimal numbers.
+    Correct handling of invalid arguments.
+     */
     @Test
     void calculateTimeTest(){
         assertEquals(60, RunningCalculator.calculateTime(distance, speed));
@@ -38,6 +55,12 @@ public class RunningCalculatorTest {
         assertThrows(IllegalArgumentException.class, () -> RunningCalculator.calculateTime(distance, speed));
     }
 
+    /*
+    Test checks the following:
+    Correct calculation with regular numbers.
+    Correct calculation with decimal numbers.
+    Correct handling of invalid arguments.
+     */
     @Test
     void calculateSpeedTest(){
         assertEquals(10.0, RunningCalculator.calculateSpeed(distance, time));
