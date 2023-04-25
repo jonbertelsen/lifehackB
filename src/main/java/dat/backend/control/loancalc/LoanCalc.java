@@ -27,7 +27,7 @@ public class LoanCalc extends HttpServlet {
         }
 
         if (request.getParameterMap().containsKey("monthYearChange")){
-            APRC = LoanCalculator.recalculateToMonths(APRC);
+            duration = LoanCalculator.recalculateToMonths(duration);
         }
 
         // is getting the total cost of the loan as it is

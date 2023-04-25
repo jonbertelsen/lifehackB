@@ -17,18 +17,16 @@ public class LoanCalculator {
 
     private static double findInterestPowerOfLength(double loanLength, double loanAPRC) {
         //calculates (1+i)^n :)
-        double interest = recalculateInterest(loanAPRC);
-        double interestPowerOfLength = Math.pow((1+interest),loanLength);
+        double interestPowerOfLength = Math.pow((1+loanAPRC),loanLength);
         return interestPowerOfLength;
     }
 
     public static double findMonthlyPayment(double loanSize, double loanLength, double loanAPRC) {
         double monthlyPayment;
+         double interest = recalculateInterest(loanAPRC);
 
-        //Calculate monthly payments based off user variables
-        double i = findInterestPowerOfLength(loanLength, loanAPRC);
-
-        double interest = recalculateInterest(loanAPRC);
+         //Calculate monthly payments based off user variables
+        double i = findInterestPowerOfLength(loanLength, interest);
         monthlyPayment = ((loanSize*interest)*i)/(i-1);
 
         return monthlyPayment;
@@ -36,33 +34,28 @@ public class LoanCalculator {
 
     public static double totalCostOfLoan(double loanSize, double loanLength, double loanAPRC) {
         //calculating how much you have to pay back for the whole loan
-        double loanPayBack;
 
         double monthlyPayment = findMonthlyPayment(loanSize, loanLength, loanAPRC);
-        double i = findInterestPowerOfLength(loanLength, loanAPRC);
 
-        return loanPayBack = (monthlyPayment/loanAPRC)*(1-(1/i));
+        return monthlyPayment * loanLength;
     }
 
 
     public static double totalCostWithLowerAPRC(double loanSize, double loanLength, double loanAPRC) {
-        double loanPayBack;
-        double newAPRC = loanAPRC-(loanAPRC/3);
+        double newAPRC = loanAPRC-(loanAPRC/2);
 
         double monthlyPayment = findMonthlyPayment(loanSize, loanLength, newAPRC);
-        double i = findInterestPowerOfLength(loanLength, newAPRC);
 
-        return loanPayBack = (monthlyPayment/newAPRC)*(1-(1/i));
+
+        return monthlyPayment*loanLength;
     }
 
     public static double totalCostWithLowerLength(double loanSize, double loanLength, double loanAPRC) {
-        double loanPayBack;
         double newLoanLength = loanLength - (loanLength/3);
 
         double monthlyPayment = findMonthlyPayment(loanSize, newLoanLength, loanAPRC);
-        double i = findInterestPowerOfLength(newLoanLength, loanAPRC);
 
-        return loanPayBack = (monthlyPayment/loanAPRC)*(1-(1/i));
+        return monthlyPayment * newLoanLength;
     }
 
     public double getLoanSize() {
