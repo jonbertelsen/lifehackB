@@ -21,6 +21,7 @@ public class Junkfood extends HttpServlet {
     final static FoodAndDrinks[] foodObjects = {
             new FoodAndDrinks("Pizza", 600), //0
             new FoodAndDrinks("Burger",700) //1
+            new FoodAndDrinks("Soda", 300)
     };
 
 
@@ -42,7 +43,8 @@ public class Junkfood extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int selectedObejctIndex = Integer.parseInt(request.getParameter("junk"));
-        FoodAndDrinks selectedObject = foodObjects[selectedObejctIndex];
+        
+        int selectedObjectIndex = Integer.parseInt(request.getParameter("junk"));
+        FoodAndDrinks selectedObject = foodObjects[selectedObjectIndex];
     }
 }
