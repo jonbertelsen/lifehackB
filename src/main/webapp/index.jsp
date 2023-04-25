@@ -16,11 +16,10 @@
         </t:info>
         <t:content>
             <ul class="list-group">
-                <li class="list-group-item">An item</li>
-                <li class="list-group-item">A second item</li>
-                <li class="list-group-item">A third item</li>
-                <li class="list-group-item">A fourth item</li>
-                <li class="list-group-item">And a fifth one</li>
+                <a class="link" href="${pageContext.request.contextPath}/runningcalculator.jsp"><li class="list-group-item">Løbeberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/loancalc.jsp"><li class="list-group-item">Låneberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/sodaconsumption.jsp"><li class="list-group-item">Sodavandsindtag</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item">1rm-beregner</li></a>
             </ul>
         </t:content>
     </jsp:body>

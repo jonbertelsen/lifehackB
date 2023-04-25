@@ -31,9 +31,10 @@
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 1</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 2</a>
-                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/">Page 3</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/runningcalculator.jsp">Løbeberegner</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/loancalc.jsp">Låneberegner</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/sodaconsumption.jsp">Sodavandsindtag</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/onerepmax.jsp">1rm-beregner</a>
                 </div>
             </div>
         </div>
