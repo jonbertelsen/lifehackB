@@ -14,7 +14,7 @@
         <form method="post">
 
             <select class="form-select" style="color: #6f42c1; width: 600px; text-align-last: center;"
-                    aria-label="Default select example" name="top">
+                    aria-label="Default select example" name="junk">
                 <option selected>Vælg din mad</option>
                 <c:forEach var="junk" items="${requestScope.foodsanddrinks}" varStatus="loop">
                     <option value="${loop.index}">${junk.food} ${junk.kcal}</option>

@@ -20,7 +20,7 @@ public class Junkfood extends HttpServlet {
 
     final static FoodAndDrinks[] foodObjects = {
             new FoodAndDrinks("Pizza", 600), //0
-            new FoodAndDrinks("Burger",700) //1
+            new FoodAndDrinks("Burger",700), //1
             new FoodAndDrinks("Soda", 300)
     };
 
@@ -36,8 +36,7 @@ public class Junkfood extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //When the site is sent to client/browser then it will populate 'foodsanddrinks' object with the constant array foodObjects
         request.setAttribute("foodsanddrinks", foodObjects);
-        response.sendRedirect("junkfood.jsp");
-
+        request.getRequestDispatcher("junkfood.jsp").forward(request, response);
 
     }
 
