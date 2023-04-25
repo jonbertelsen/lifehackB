@@ -60,31 +60,31 @@ th, td {
 
 /* text colors */
 .text-primary {
-    background-color: var(--primary) !important;
+    color: var(--primary) !important;
 }
 .text-secondary {
-    background-color: var(--secondary) !important;
+    color: var(--secondary) !important;
 }
 .text-info {
-    background-color: var(--info) !important;
+    color: var(--info) !important;
 }
 .text-light {
-    background-color: var(--white) !important;
+    color: var(--white) !important;
 }
 .text-dark {
-    background-color: var(--black) !important;
+    color: var(--black) !important;
 }
 .text-body {
-    background-color: var(--black) !important;
+    color: var(--black) !important;
 }
 .text-white {
-    background-color: var(--white) !important;
+    color: var(--white) !important;
 }
 .text-white-50 {
-    background-color: var(--transparent) !important;
+    color: var(--transparent) !important;
 }
 .text-black-50 {
-    background-color: var(--transparent-black) !important;
+    color: var(--transparent-black) !important;
 }
 
 
