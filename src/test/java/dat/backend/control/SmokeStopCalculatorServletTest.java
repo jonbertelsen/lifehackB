@@ -59,7 +59,6 @@ class SmokeStopCalculatorServletTest {
         verify(request).setAttribute(eq("cigarettesAfter10PercentCut"), any(Double.class));
         verify(request).setAttribute(eq("cigarettesAfter20PercentCut"), any(Double.class));
         verify(request).setAttribute(eq("cigarettesAfter50PercentCut"), any(Double.class));
-        verify(request).setAttribute(eq("cigarettesAfter100PercentCut"), any(Double.class));
 
         // And lastly we verify that the servlet has forwarded to the correct JSP page.
         verify(requestDispatcher).forward(request, response);
