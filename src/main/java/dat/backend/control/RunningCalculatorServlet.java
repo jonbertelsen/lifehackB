@@ -39,17 +39,17 @@ public class RunningCalculatorServlet extends HttpServlet {
             distance = Double.parseDouble(request.getParameter("km"));
             distanceChosen = true;
             numberOfOptionsChosen++;
-        } catch(NullPointerException e){}
+        } catch(NumberFormatException e){}
         try {
             time = Integer.parseInt(request.getParameter("time"));
             timeChosen = true;
             numberOfOptionsChosen++;
-        } catch(NullPointerException e){}
+        } catch(NumberFormatException e){}
         try {
             speed = Double.parseDouble(request.getParameter("average"));
             speedChosen = true;
             numberOfOptionsChosen++;
-        } catch(NullPointerException e){}
+        } catch(NumberFormatException e){}
 
         //If 3 options has been chosen - no calculations will be done - it is forwarded to the jsp page that the input needs to be specified.
         if(numberOfOptionsChosen == 3){

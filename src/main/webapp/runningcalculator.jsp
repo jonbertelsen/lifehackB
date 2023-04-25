@@ -83,7 +83,7 @@
                                         <div class="input-group mb-3">
                                             <input id="average" class="d-inline form-control 2-10" type="number"
                                                    name="average"
-                                                   value="0.0" step="0.1" min="0.0">
+                                                   step="0.1" min="0.0">
                                             <div class="input-group-append">
                                                 <span class="input-group-text" id="basic-addon"> km/t</span>
                                             </div>
@@ -103,44 +103,38 @@
                                     <%--********************************************
                                     Different respons to the user
                                     ********************************************--%>
-                                    <c:if test="${requestScope.distance!=null}">
+                                   <td>
+                                    <c:if test="${requestScope.calculateDistance}">
 
-                                        <td>
-                                            <p class="card-text"> Ud fra de valgte kriterier vil du kunne nå at løbe:
+                                            <p class="card-text"> hvis du løber i "${requestScope.time}, med en gennemsnitshastighed på "${requestScope.speed}vil du kunne nå at løbe:
                                                 <br/>
                                                 "${requestScope.distance} km </p>
-                                        </td>
-
                                     </c:if>
-                                    <c:if test="${requestScope.time!=null}">
-                                        <td>
-                                            <p class="card-text"> Ud fra de valgte kriterier vil du løbe distancen på:
+
+                                    <c:if test="${requestScope.calculateSpeed}">
+
+                                            <p class="card-text"> Hvis du løber "${requestScope.distance}, på "${requestScope.time} antal minutter, så vil din gennemsnitshastighed være:
                                                 <br/>
-                                                "${requestScope.time} minutter </p>
-                                        </td>
+                                                "${requestScope.speed} minutter </p>
                                     </c:if>
 
-                                    <c:if test="${requestScope.speed!=null}">
-                                        <td>
-                                            <p class="card-text"> Ud fra de valgte kriterier rammer du en
-                                                gennemsnitshastighed på: <br/>
-                                                "${requestScope.speed} km/t </p>
-                                        </td>
+                                    <c:if test="${requestScope.calculateTime}">
+
+                                            <p class="card-text"> Hvis du løber "${requestScope.distance}, med en gennemsnitshastighed på "${requestScope.speed} km/t, vil du løbe i: <br/>
+                                                "${requestScope.time} antal minutter </p>
                                     </c:if>
 
-                                    <c:if test="${requestScope.allOptionsChosen == true}">
-                                        <td>
+                                    <c:if test="${requestScope.allOptionsChosen}">
+
                                             <p class="card-text">hva blondie? Hvad er det jeg skal udregne hvis du selv
                                                 skriver det hele?</p>
-                                        </td>
                                     </c:if>
 
-                                    <c:if test="${requestScope.notEnoughOptionsChosen==true}">
-                                        <td>
+                                    <c:if test="${requestScope.notEnoughOptionsChosen}">
+
                                             <p class="card-text">hva så? Skal jeg selv gætte det sidste kriterie, eller
                                                 vil du indtaste noget brugbart?<br/>
                                                 Jeg skal bruge 2 udfyldte felter</p>
-                                        </td>
                                     </c:if>
                                     </td>
                                 </tr>
