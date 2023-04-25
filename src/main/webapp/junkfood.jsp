@@ -30,5 +30,13 @@
     </div>
 </div>
 
+
+<c:forEach var="junk" items="${requestScope.selectedChoices}" varStatus="loop">
+    <p>food: ${junk.food}</p>
+<p> kcal: ${junk.kcal}</p>
+</c:forEach>
+
+
+
 </body>
 </html>
