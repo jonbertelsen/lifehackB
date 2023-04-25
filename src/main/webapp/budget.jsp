@@ -12,6 +12,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-6">
+
                     <form method="post" action="calculate">
                         <div class="form-group">
                             <label for="income">Income:</label>
@@ -22,12 +23,13 @@
                         </div>
                         <div class="form-group">
                             <label for="incomeAmount">Income amount:</label>
-                            <input type="text" class="form-control" id="incomeAmount" value="incomeAmount">
+                            <input type="text" class="form-control" id="incomeAmount" name="amount">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="action" value="add">Add</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="income">Add</button>
                     </form>
-                        <br>
-                        <br>
+                    <br>
+                    <br>
+
                     <form method="post" action="calculate">
                         <div class="form-group">
                             <label for="expense">Expense:</label>
@@ -42,11 +44,12 @@
                         </div>
                         <div class="form-group">
                             <label for="expenseAmount">Expense amount:</label>
-                            <input type="text" class="form-control" id="expenseAmount" name="expenseAmount">
+                            <input type="text" class="form-control" id="expenseAmount" name="amount">
                         </div>
-                        <button type="submit" class="btn btn-primary" name="action" value="add">Add</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="expense">Add</button>
                     </form>
                     <br>
+
                     <table class="table">
                         <thead>
                         <tr>
@@ -55,15 +58,31 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="${selectedItems}" var="item">
+                        <tr>
+                            <td colspan="2"><strong>Income:</strong></td>
+                        </tr>
+
+                        <c:forEach items="${sessionScope.selectedIncome}" var="income">
                             <tr>
-                                <td>${item.name}</td>
-                                <td>${item.getAmount()}</td>
+                                <td>${income.name}</td>
+                                <td>${income.amount}</td>
                             </tr>
+
+                        </c:forEach>
+
+                        <tr>
+                            <td colspan="2"><strong>Expense:</strong></td>
+                        </tr>
+                        <c:forEach items="${sessionScope.selectedExpense}" var="expense">
+                            <tr>
+                                <td>${expense.name}</td>
+                                <td>-${expense.amount}</td>
+                            </tr>
+
                         </c:forEach>
                         <tr>
-                            <td colspan="2"><strong>Total:</strong></td>
-                            <td>${totalIncome - totalExpense}</td>
+                            <td colspan="2"><strong>Balance:</strong></td>
+                            <td><h4>${balance}</h4></td>
                         </tr>
                         </tbody>
                     </table>

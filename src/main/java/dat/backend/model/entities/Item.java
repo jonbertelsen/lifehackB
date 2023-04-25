@@ -4,10 +4,12 @@ public class Item {
 
         private String name;
         private double amount;
+        private String type;
 
-    public Item(String name, double amount) {
+    public Item(String name, double amount, String type) {
         this.name = name;
         this.amount = amount;
+        this.type = type;
     }
 
 
@@ -16,6 +18,10 @@ public class Item {
     }
     public double getAmount() {
         return amount;
+    }
+
+    public String getType() {
+        return type;
     }
 
 }

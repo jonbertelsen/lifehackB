@@ -1,11 +1,8 @@
 package dat.backend.control;
 
 import dat.backend.model.entities.Item;
-
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
+import java.util.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,85 +14,84 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "CalculateServlet", value = "/calculate")
 public class CalculateServlet extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         String action = request.getParameter("action");
-        String type = request.getParameter("type");
-        String name = request.getParameter("name");
-        String amountStr = request.getParameter("amount");
+        String amountStr = request.getParameter("amount").replace(',', '.');
 
-        // Initialize session variables
         HttpSession session = request.getSession();
-        List<Item> selectedItems = (List<Item>) session.getAttribute("selectedItems");
-        double totalIncome = (double) session.getAttribute("totalIncome");
-        double totalExpense = (double) session.getAttribute("totalExpense");
-
-        if (selectedItems == null) {
-            selectedItems = new ArrayList<Item>();
+        List<Item> selectedIncome = (List<Item>) session.getAttribute("selectedIncome");
+        if (selectedIncome == null) {
+            selectedIncome = new ArrayList<Item>();
         }
 
-        if ("add".equals(action)) {
-            double amount = Double.parseDouble(amountStr);
-            Item item = new Item(name, amount);
-            selectedItems.add(item);
-
-            if ("income".equals(type)) {
-                totalIncome += amount;
-            } else {
-                totalExpense += amount;
-            }
-        } else if ("remove".equals(action)) {
-            int index = Integer.parseInt(request.getParameter("index"));
-            Item item = selectedItems.remove(index);
-
-            if ("income".equals("")) {
-                totalIncome -= item.getAmount();
-            } else {
-                totalExpense -= item.getAmount();
-            }
+        List<Item> selectedExpense = (List<Item>) session.getAttribute("selectedExpense");
+        if (selectedExpense == null) {
+            selectedExpense = new ArrayList<Item>();
         }
 
-        // Calculate remaining balance
-        double balance = totalIncome - totalExpense;
+        if (amountStr.contains("-")) {
+            Exception e = new IllegalArgumentException("Input can not be negative");
+           request.setAttribute("errormessage",e.getMessage());
+            request.getRequestDispatcher("error.jsp").forward(request,response);
+        }
+        try {
+            if ("income".equals(action)) {
+                double amount = Double.parseDouble(amountStr);
+                String name = request.getParameter("income");
+                Item item = new Item(name, amount, action);
+                selectedIncome.add(item);
+            }
+            if ("expense".equals(action)) {
+                double amount = Double.parseDouble(amountStr);
+                String name = request.getParameter("expense");
+                Item item = new Item(name, amount, action);
+                selectedExpense.add(item);
+            }
 
-        // Update session variables
-        session.setAttribute("selectedItems", selectedItems);
-        session.setAttribute("totalIncome", totalIncome);
-        session.setAttribute("totalExpense", totalExpense);
-        session.setAttribute("balance", balance);
-
-        // Redirect to JSP view
-        request.getRequestDispatcher("budget.jsp").forward(request, response);
+        } catch (NumberFormatException e) {
+      request.setAttribute("errormessage",e.getMessage());
+      request.getRequestDispatcher("error.jsp").forward(request,response);
+        }
+        catch (NullPointerException e){
+         request.setAttribute("errormessage",e.getMessage());
+         request.getRequestDispatcher("error.jsp").forward(request,response);
     }
 
+        double balance = 0;
+        for (Item item : selectedExpense) {
+            double amount = item.getAmount();
+            balance -= amount;
+
+        }
+
+        for (Item item : selectedIncome) {
+            double amount = item.getAmount();
+            balance += amount;
+
+
+        }
+        selectedIncome.sort(Comparator.comparing(Item::getAmount));
+        selectedExpense.sort(Comparator.comparing(Item::getAmount));
+
+
+
+        // Update session variables
+        session.setAttribute("selectedExpense", selectedExpense);
+        session.setAttribute("selectedIncome", selectedIncome);
+        session.setAttribute("balance", balance);
+
+        response.sendRedirect("calculate");
+
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        request.getRequestDispatcher("budget.jsp").forward(request, response);
+
+    }
 }
-/*
- Scanner input = new Scanner(System.in);
-
-      // Indtastning af indtægter
-      System.out.print("Indtast din månedlige indtægt: ");
-      double indtægt = input.nextDouble();
-
-      // Indtastning af udgifter
-      System.out.print("Indtast din månedlige husleje: ");
-      double husleje = input.nextDouble();
-
-      System.out.print("Indtast din månedlige madudgift: ");
-      double madudgift = input.nextDouble();
-
-      System.out.print("Indtast din månedlige transportudgift: ");
-      double transportudgift = input.nextDouble();
-
-      // Beregning af budgettet
-      double udgifter = husleje + madudgift + transportudgift;
-      double budget = indtægt - udgifter;
-
-      // Udskrivning af resultatet
-      System.out.println("Dit månedlige budget er: " + budget);
-   }
-}
- */
