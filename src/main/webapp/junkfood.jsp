@@ -20,6 +20,12 @@
                     <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
                 </c:forEach>
             </select>
+            <div class="btn-toolbar justify-content-between mt-4" role="toolbar">
+                <div class="btn-group" role="group">
+                    <button formaction="Junkfood" type="submit"
+                            class="btn btn-primary">Add
+                    </button>
+                </div>
         </form>
     </div>
 </div>

@@ -45,5 +45,6 @@ public class Junkfood extends HttpServlet {
         
         int selectedObjectIndex = Integer.parseInt(request.getParameter("junk"));
         FoodAndDrinks selectedObject = foodObjects[selectedObjectIndex];
+        request.getRequestDispatcher("junkfood.jsp").forward(request, response);
     }
 }
