@@ -1,4 +1,4 @@
 <%@tag description="div to display your info about the page" pageEncoding="UTF-8"%>
-<div id="info" class="card shadow col-xs-12 col-lg p-2 m-2 bg-white text-dark">
+<div id="info" class="card shadow col-xs-12 col-lg p-2 m-2 text-dark">
     <jsp:doBody/>
 </div>

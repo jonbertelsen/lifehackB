@@ -16,10 +16,10 @@
         </t:info>
         <t:content>
             <ul class="list-group bg-white">
-                <a class="link" href="${pageContext.request.contextPath}/runningcalculator.jsp"><li class="list-group-item bg-white text-dark">Løbeberegner</li></a>
-                <a class="link" href="${pageContext.request.contextPath}/loancalc.jsp"><li class="list-group-item bg-white text-dark">Låneberegner</li></a>
-                <a class="link" href="${pageContext.request.contextPath}/sodaconsumption.jsp"><li class="list-group-item bg-white text-dark">Sodavandsindtag</li></a>
-                <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item bg-white text-dark">1rm-beregner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/runningcalculator.jsp"><li class="list-group-item text-dark">Løbeberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/loancalc.jsp"><li class="list-group-item text-dark">Låneberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/sodaconsumption.jsp"><li class="list-group-item text-dark">Sodavandsindtag</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item text-dark">1rm-beregner</li></a>
             </ul>
         </t:content>
     </jsp:body>

@@ -18,7 +18,7 @@
     <!--Styles-->
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/style.css">
 </head>
-<body class="bg-white">
+<body class="">
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
         <div class="container">
