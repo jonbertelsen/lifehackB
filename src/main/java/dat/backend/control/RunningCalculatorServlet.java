@@ -32,6 +32,9 @@ public class RunningCalculatorServlet extends HttpServlet {
         boolean speedChosen = false;
         boolean allOptionsChosen = false;
         boolean notEnoughOptionsChosen = false;
+        boolean calculateDistance = false;
+        boolean calculateTime = false;
+        boolean calculateSpeed = false;
         int numberOfOptionsChosen = 0;
 
         //Tries to retrieve values from the form - if all is well, it recognises that the value has been parsed and adds to the total number of options chosen.
@@ -60,19 +63,25 @@ public class RunningCalculatorServlet extends HttpServlet {
         //Depending on which 2 values were passed to the servlet it will run the calculation for the third and missing value.
         } else {
             if(distanceChosen && speedChosen){
+                calculateTime = true;
                 request.setAttribute("distance", distance);
                 request.setAttribute("time", RunningCalculator.calculateTime(distance, speed));
                 request.setAttribute("speed", speed);
             } else if(distanceChosen && timeChosen){
+                calculateSpeed = true;
                 request.setAttribute("distance", distance);
                 request.setAttribute("time", time);
                 request.setAttribute("speed", RunningCalculator.calculateSpeed(distance, time));
             } else if(timeChosen && speedChosen){
+                calculateDistance = true;
                 request.setAttribute("distance", RunningCalculator.calculateDistance(time, speed));
                 request.setAttribute("time", time);
                 request.setAttribute("speed", speed);
             }
         }
+        request.setAttribute("calculateDistance", calculateDistance);
+        request.setAttribute("calculateTime", calculateTime);
+        request.setAttribute("calculateSpeed", calculateSpeed);
         request.setAttribute("allOptionsChosen", allOptionsChosen);
         request.setAttribute("notEnoughOptionsChosen", notEnoughOptionsChosen);
 
