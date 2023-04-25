@@ -1,5 +1,27 @@
 /* CSS stylesheet  for application */
 
+* {
+    --primary: #11B5E4;
+    --secondary:  #034748;
+    --info:  #1481BA;
+    --black: #001021;
+    --white: #FFFCF7;
+    --transparent: rgba(255, 252, 247, 0.5);
+    --transparent-black: rgba(0, 16, 33, 0.5);
+}
+
+body {
+    width: 100vw !important;
+}
+
+#body {
+    width: 100vw !important;
+}
+
+.row {
+    width: 100% !important;
+}
+
 table {
     border-collapse: collapse;
     border: 1px solid silver;
@@ -11,5 +33,58 @@ th, td {
     padding:15px;
 }
 
+.btn {
+    background-color: var(--primary) !important;
+}
+
+/* background colors */
+.bg-primary {
+    background-color: var(--primary) !important;
+}
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+.bg-info {
+    background-color: var(--info) !important;
+}
+.bg-dark {
+    background-color: var(--black) !important;
+}
+.bg-white {
+    background-color: var(--white) !important;
+}
+.bg-transparent {
+    background-color: var(--transparent) !important;
+}
+
+
+/* text colors */
+.text-primary {
+    background-color: var(--primary) !important;
+}
+.text-secondary {
+    background-color: var(--secondary) !important;
+}
+.text-info {
+    background-color: var(--info) !important;
+}
+.text-light {
+    background-color: var(--white) !important;
+}
+.text-dark {
+    background-color: var(--black) !important;
+}
+.text-body {
+    background-color: var(--black) !important;
+}
+.text-white {
+    background-color: var(--white) !important;
+}
+.text-white-50 {
+    background-color: var(--transparent) !important;
+}
+.text-black-50 {
+    background-color: var(--transparent-black) !important;
+}
 
 
