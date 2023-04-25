@@ -11,6 +11,22 @@
     <title>Junkfood</title>
 </head>
 <body>
+<h1>Rasmus og Marcus' liste af kcal test test</h1>
+
+<div style="display: flex; justify-content: center;">
+    <div>
+        <form method="post">
+
+            <select class="form-select" style="color: #6f42c1; width: 600px; text-align-last: center;"
+                    aria-label="Default select example" name="top">
+                <option selected>Vælg en top</option>
+                <c:forEach var="junk" items="${requestScope.foodsanddrinks}" varStatus="loop">
+                    <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
+                </c:forEach>
+            </select>
+        </form>
+    </div>
+</div>
 
 </body>
 </html>
