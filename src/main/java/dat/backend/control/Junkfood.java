@@ -24,7 +24,7 @@ public class Junkfood extends HttpServlet {
             new FoodAndDrinks("Soda", 300),
             new FoodAndDrinks("Sandwich", 500),
             new FoodAndDrinks("Muffin", 400),
-            new FoodAndDrinks("Bananasplit", 600 kcal)
+            new FoodAndDrinks("Bananasplit", 600)
     };
 
 
