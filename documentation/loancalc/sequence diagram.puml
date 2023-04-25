@@ -1,0 +1,11 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+User -> Website: Input loan information
+Website --> User: Display inputted information with edit button(?)
+
+User -> Website: Press 'calculate' button
+Website --> User: Displays cost of loan and interest
+@enduml

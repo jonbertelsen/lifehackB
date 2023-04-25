@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class LottoCoupon {
+    - double loanSize
+    - int loanLength
+    - double loanARPC
+
+    + totalCostOfLoan(loanSize, loanLength, loanARPC)
+    + totalInterestOfLoan()
+    + lowerARPC()
+    + shortenLoanLength()
+    + getters()
+    + setters()
+}
+
+@enduml
