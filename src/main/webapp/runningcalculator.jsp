@@ -10,14 +10,30 @@
     <title>Running Calculator</title>
 
      <style>
-         body {
+         content {
              background-image: url("images/ForestTrail.jpg");
          }
      </style>
+
 </jsp:attribute>
-
-
     <jsp:body>
+
+    <t:info>
+
+        <h2> Løbe Beregner</h2> <br/>
+        <p> Med dette lille program kan du beregne: <br/>
+            * antal af kilometer <br/>
+            * Anslået løbetid<br/>
+            eller <br/>
+            * Gennemsnitshastighed<br/>
+            ved at udfylde to af kriterierne, vil du få oplyst den tredje. <br/>
+        God fornøjelse</p>
+
+
+    </t:info>
+
+
+    <t:content>
         <div class="card">
             <h2 class="text-center pt-5"> Løbe Beregner</h2>
             <div class="card-body">
@@ -102,13 +118,21 @@
                                     </td>
                                 </tr>
                             </c:if>
-                            <c:if test="${requestScope.allOptionsChosen!=null}">
+                            <c:if test="${requestScope.allOptionsChosen == true}">
                                 <tr>
                                     <td>
                                         <p>hva blondie? Hvad er det jeg skal udregne hvis du selv skriver det hele?</p>
                                     </td>
                                 </tr>
                             </c:if>
+                                    <c:if test="${requestScope.notEnoughOptionsChosen==true}">
+                                        <tr>
+                                            <td>
+                                                <p>hva så? Skal jeg selv gætte det sidste kriterie, eller vil du indtaste noget brugbart?<br/>
+                                                Jeg skal bruge 2 udfyldte felter</p>
+                                            </td>
+                                        </tr>
+                                    </c:if>
                             </td>
                             </tr>
                             <tr>
@@ -123,5 +147,6 @@
         </div>
 
 
+    </t:content>
     </jsp:body>
 </t:pagetemplate>
