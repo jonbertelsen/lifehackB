@@ -15,16 +15,16 @@
     </jsp:attribute>
 
      <jsp:body>
-       <%-- <jsp:info>
+       <%-- <t:info>
            <h1 class="card-title> Loan calculator </h1>
                <p class="card-text"> This program is designed to show you variations of a loan you have taken or maybe
            will take in the future. The loan calculator is designed to calculate different aspects of your loan
            including, but not limited to, the total cost of the loan, and your interest rate. The program will also
            showcase different prices with a shorter/longer loan period or even a lower APRC. </p>
-        <%-- </jsp:info> --%>
+        <%-- </t:info> --%>
 
 
-        <%-- <jsp:content> --%>
+        <%-- <t:content> --%>
          <%-- Form for user input --%>
         <form action="loancalc" method="POST">
             <div class="form-group">
@@ -53,7 +53,7 @@
                     <th>Total amount to pay back</th>
                     <th>Monthly payments</th>
                     <th>Interest</th>
-                    <th>Loan Length</th>
+                    <th>Loan Length (months)</th>
                 </tr>
                 <tr>
                     <%-- Data output based on user input limited to 2 decimals --%>
@@ -64,7 +64,7 @@
                         <fmt:formatNumber type="number" maxFractionDigits="2" value="${requestScope.monthlypayment}"/>DKK
                     </td>
                     <td>
-                        <fmt:formatNumber type="number" maxFractionDigits="2" value="${requestScope.interest}"/>%
+                        <fmt:formatNumber type="number" maxFractionDigits="2" value="${requestScope.interest}"/>DKK
                     </td>
                     <td>
                         <fmt:formatNumber type="number" maxFractionDigits="2" value="${requestScope.loanlength}"/>
@@ -72,8 +72,8 @@
                 </tr>
                 <tr>
                     <%-- Calculates user input but with shorter duration and lower APRC --%>
-                    <th>Shorter duration</th>
-                    <th>Lower APRC</th>
+                    <th>Total: Shorter duration (33%)</th>
+                    <th>Total: Lower APRC (50%)</th>
                 </tr>
                 <tr>
                     <td>
@@ -85,6 +85,6 @@
 
                 </tr>
             </table>
-    <%-- </jsp:content> --%>
+    <%-- </t:content> --%>
 </jsp:body>
 </t:pagetemplate>

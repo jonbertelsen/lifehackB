@@ -34,9 +34,9 @@ public class LoanCalc extends HttpServlet {
         double totalCostOfLoan = LoanCalculator.totalCostOfLoan(loanAmount, duration, APRC);
         //gets the monthlypayment
         double monthlyPayment = LoanCalculator.findMonthlyPayment(loanAmount, duration, APRC);
-        // gets total loan if we lowers the APRC with 50%
+        // gets total loan if we lower the APRC with 50%
         double totalCostWithlowerAPRC = LoanCalculator.totalCostWithLowerAPRC(loanAmount, duration, APRC);
-        // gets total loan if we lower the loanlenght by 33%
+        // gets total loan if we shorten the loanlength by 33%
         double totalCostShorterDuration = LoanCalculator.totalCostWithLowerLength(loanAmount, duration, APRC);
 
         double interest = totalCostOfLoan - loanAmount;
