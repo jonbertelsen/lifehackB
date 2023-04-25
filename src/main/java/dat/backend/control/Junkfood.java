@@ -21,7 +21,10 @@ public class Junkfood extends HttpServlet {
     final static FoodAndDrinks[] foodObjects = {
             new FoodAndDrinks("Pizza", 600), //0
             new FoodAndDrinks("Burger", 700), //1
-            new FoodAndDrinks("Soda", 300)
+            new FoodAndDrinks("Soda", 300),
+            new FoodAndDrinks("Sandwich", 500),
+            new FoodAndDrinks("Muffin", 400),
+            new FoodAndDrinks("Bananasplit", 600 kcal)
     };
 
 
