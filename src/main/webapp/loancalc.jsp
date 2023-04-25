@@ -13,19 +13,20 @@
 
         <h3>You can log in here</h3>
 
+        <%-- Form for user input --%>
         <form action="LoanCalc" method="POST">
             <div class="form-group">
                 <label for="loanAmount">Loan amount</label>
-                <input type="number" class="form-control" id="loanAmount" placeholder="Enter loan amount">
+                <input type="number" class="form-control" id="loanAmount" name="loanAmount" placeholder="Enter loan amount">
             </div>
             <div class="form-group">
-                <label for="exampleInputPassword1">ARPC</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" aria-describedby="ARPChelp" placeholder="Enter ARPC">
-                <small id="ARPChelp" class="form-text text-muted">Annual Percentage Rate of Charge</small>
+                <label for="ARPC">ARPC</label>
+                <input type="number" class="form-control" id="ARPC" name="ARPC" aria-describedby="ARPChelp" placeholder="Enter ARPC">
+                <small id="ARPChelp" class="form-text text-muted">Annual Percentage Rate of Charge (ÅOP)</small>
             </div>
             <div class="form-group">
                 <label for="duration">Duration in months</label>
-                <input type="number" class="form-control" id="duration" placeholder="Enter length of loan">
+                <input type="number" class="form-control" id="duration" name="duration" placeholder="Enter length of loan">
             </div>
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" id="monthYearChange">
@@ -33,6 +34,18 @@
             </div>
             <button type="submit" class="btn btn-primary">Calculate</button>
         </form>
+
+        <%-- Table for displaying result of user input --%>
+        <div id="result" style="display:none;">
+            <form action="/LoanCalc" method="POST">
+                <input type="submit" name="showresult" id="txtSubmit" value="Result" />
+            </form>
+        </div>
+        <div id="result">
+    <pre>
+            ${requestScope.utilOutput}
+    </pre>
+        </div>
 
     </jsp:body>
 </t:pagetemplate>

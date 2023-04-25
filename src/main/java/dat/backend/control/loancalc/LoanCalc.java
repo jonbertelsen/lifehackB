@@ -14,6 +14,10 @@ public class LoanCalc extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Read user input from fields
+        double loanAmount = Double.parseDouble(request.getParameter("loanAmount"));
+        double ARPC = Double.parseDouble(request.getParameter("ARPC"));
+        double duration = Double.parseDouble(request.getParameter("duration"));
 
     }
 }
