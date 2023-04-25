@@ -49,6 +49,11 @@ class SmokeStopCalculatorServletTest {
         servlet.doPost(request, response);
 
         // Here we verify that the servlet has set the correct attributes.
+        // We test the behaviour of the servlet.
+        //We cant test the actual values of the attributes, because they are calculated in the servlet.
+        // We therefore only verify here that the servlet sets the expected attributes with the correct keys and valuetypes.
+        // so we are actually checking if the servlet is setting the attributes to any double class, and not a specific one
+
         verify(request).setAttribute(eq("totalSavedAWeek"), any(Double.class));
         verify(request).setAttribute(eq("totalSavedAMonth"), any(Double.class));
         verify(request).setAttribute(eq("totalSavedAYear"), any(Double.class));
