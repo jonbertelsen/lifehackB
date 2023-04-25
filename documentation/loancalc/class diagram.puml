@@ -3,15 +3,16 @@
 
 class LottoCoupon {
     - double loanSize
-    - int loanLength
-    - double loanARPC
+    - double loanLength
+    - double interest
+    - int initialCost
+    - double loanAPRC = interest + initialCost
 
     + totalCostOfLoan(loanSize, loanLength, loanARPC)
     + totalInterestOfLoan()
     + lowerARPC()
     + shortenLoanLength()
     + getters()
-    + setters()
 }
 
 @enduml

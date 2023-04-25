@@ -7,5 +7,9 @@ User -> Website: Input loan information
 Website --> User: Display inputted information with edit button(?)
 
 User -> Website: Press 'calculate' button
+Website -> Website: If 'year' box is checked, recalculate to months
+Website -> Website: Recalculate user input to suggest shorter duration and lower APRC
 Website --> User: Displays cost of loan and interest
+
+
 @enduml
