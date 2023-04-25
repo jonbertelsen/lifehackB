@@ -1,11 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Marcu
-  Date: 25-04-2023
-  Time: 10:03
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page errorPage="error.jsp" isErrorPage="false" %>
 <html>
 <head>
     <title>Junkfood</title>
@@ -19,7 +15,7 @@
 
             <select class="form-select" style="color: #6f42c1; width: 600px; text-align-last: center;"
                     aria-label="Default select example" name="top">
-                <option selected>Vælg en top</option>
+                <option selected>Vælg din mad</option>
                 <c:forEach var="junk" items="${requestScope.foodsanddrinks}" varStatus="loop">
                     <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
                 </c:forEach>
