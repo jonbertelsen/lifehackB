@@ -8,10 +8,16 @@
 
 <jsp:attribute name="header">
     <title>Running Calculator</title>
+
+     <style>
+         body {
+             background-image: url("images/ForestTrail.jpg");
+         }
+     </style>
 </jsp:attribute>
 
+
     <jsp:body>
-        <body background="![](images/ForestTrail.jpg)"/>
         <div class="card">
             <h2 class="text-center pt-5"> Løbe Beregner</h2>
             <div class="card-body">
@@ -68,16 +74,42 @@
                             <tr>
                                 <td>
                                     <button
-                                            formaction="calculate" class="btn btn-outline-dark"
+                                            formaction="runningcalculator" class="btn btn-outline-dark"
                                             name="calculate">Beregn
                                     </button>
                                 </td>
+                                <c:if test="${requestScope.distance!=null}">
+                            <tr>
                                 <td>
-
-
-
-
+                                    <p> Ud fra de valgte kriterier vil du kunne nå at løbe: <br/>
+                                        "${requestScope.distance} km </p>
                                 </td>
+                            </tr>
+                            </c:if>
+                            <c:if test="${requestScope.time!=null}">
+                                <tr>
+                                    <td>
+                                        <p> Ud fra de valgte kriterier vil du løbe distancen på: <br/>
+                                            "${requestScope.time} minutter </p>
+                                    </td>
+                                </tr>
+                            </c:if>
+                            <c:if test="${requestScope.speed!=null}">
+                                <tr>
+                                    <td>
+                                        <p> Ud fra de valgte kriterier rammer du en gennemsnitshastighed på: <br/>
+                                            "${requestScope.speed} km/t </p>
+                                    </td>
+                                </tr>
+                            </c:if>
+                            <c:if test="${requestScope.allOptionsChosen!=null}">
+                                <tr>
+                                    <td>
+                                        <p>hva blondie? Hvad er det jeg skal udregne hvis du selv skriver det hele?</p>
+                                    </td>
+                                </tr>
+                            </c:if>
+                            </td>
                             </tr>
                             <tr>
                                 <td>
