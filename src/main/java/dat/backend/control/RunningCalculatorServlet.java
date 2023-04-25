@@ -65,17 +65,50 @@ public class RunningCalculatorServlet extends HttpServlet {
             if(distanceChosen && speedChosen){
                 calculateTime = true;
                 request.setAttribute("distance", distance);
-                request.setAttribute("time", RunningCalculator.calculateTime(distance, speed));
+                double totalTime = RunningCalculator.calculateTime(distance, speed);
+                int hours = 0;
+                int minutes = (int) totalTime;
+                int seconds;
+                for(int i = 0; i < (int) totalTime/60; i++){
+                    hours++;
+                    minutes -= 60;
+                }
+                seconds = (int) (0.6 * totalTime%1) * 100;
+                request.setAttribute("hour", hours);
+                request.setAttribute("minute", minutes);
+                request.setAttribute("second", seconds);
                 request.setAttribute("speed", speed);
             } else if(distanceChosen && timeChosen){
                 calculateSpeed = true;
                 request.setAttribute("distance", distance);
-                request.setAttribute("time", time);
+                double totalTime = time;
+                int hours = 0;
+                int minutes = (int) totalTime;
+                int seconds;
+                for(int i = 0; i < (int) totalTime/60; i++){
+                    hours++;
+                    minutes -= 60;
+                }
+                seconds = (int) (0.6 * totalTime%1) * 100;
+                request.setAttribute("hour", hours);
+                request.setAttribute("minute", minutes);
+                request.setAttribute("second", seconds);
                 request.setAttribute("speed", RunningCalculator.calculateSpeed(distance, time));
             } else if(timeChosen && speedChosen){
                 calculateDistance = true;
                 request.setAttribute("distance", RunningCalculator.calculateDistance(time, speed));
-                request.setAttribute("time", time);
+                double totalTime = time;
+                int hours = 0;
+                int minutes = (int) totalTime;
+                int seconds;
+                for(int i = 0; i < (int) totalTime/60; i++){
+                    hours++;
+                    minutes -= 60;
+                }
+                seconds = (int) (0.6 * totalTime%1) * 100;
+                request.setAttribute("hour", hours);
+                request.setAttribute("minute", minutes);
+                request.setAttribute("second", seconds);
                 request.setAttribute("speed", speed);
             }
         }
