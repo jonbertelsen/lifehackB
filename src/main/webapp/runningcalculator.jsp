@@ -118,7 +118,7 @@
 
                                     <c:if test="${requestScope.notEnoughOptionsChosen}">
 
-                                            <p class="card-text">hva så? Skal jeg selv gætte det sidste kriterie, eller
+                                            <p class="card-text">hva så? Skal jeg selv gætte kriterierne, eller
                                                 vil du indtaste noget brugbart?<br/>
                                                 Jeg skal bruge 2 udfyldte felter</p>
                                     </c:if>
