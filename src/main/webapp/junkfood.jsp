@@ -32,8 +32,9 @@
 
 
 <c:forEach var="junk" items="${requestScope.selectedChoices}" varStatus="loop">
-    <p>food: ${junk.food}</p>
-<p> kcal: ${junk.kcal}</p>
+    <p>food: ${junk.food}</p><br>
+<p> kcal: ${junk.kcal}</p><br>
+    <p> total: ${requestScope.totalKcal}</p><br>
 </c:forEach>
 
 

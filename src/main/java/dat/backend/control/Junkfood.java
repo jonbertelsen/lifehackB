@@ -36,6 +36,11 @@ public class Junkfood extends HttpServlet {
         //When the site is sent to client/browser then it will populate 'foodsanddrinks' object with the constant array foodObjects
         request.setAttribute("foodsanddrinks", foodObjects);
         request.setAttribute("selectedChoices",selectedChoices);
+        int sum = 0;
+        for (FoodAndDrinks item:selectedChoices) {
+            sum += item.getKcal();
+        }
+        request.setAttribute("totalKcal", sum);
         request.getRequestDispatcher("junkfood.jsp").forward(request, response);
 
     }
