@@ -22,15 +22,16 @@
                 <div>
                     <form method="post">
 
-                        <select class="form-select" style="color: #6f42c1; width: 600px; text-align-last: center;"
-                                aria-label="Default select example" name="junk">
-                            <option selected>Choose your food</option>
-                            <c:forEach var="junk" items="${requestScope.foodsanddrinks}" varStatus="loop">
-                                <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
-                            </c:forEach>
-                        </select>
-                        <div class="btn-toolbar justify-content-between mt-4" role="toolbar">
+
+                        <div class="btn-toolbar justify-content-between mt-3" role="toolbar">
                             <div class="btn-group" role="group">
+                                <select class="form-select" style="color: #6f42c1; width: 600px; text-align-last: center;"
+                                        aria-label="Default select example" name="junk">
+                                    <option selected>Choose your food</option>
+                                    <c:forEach var="junk" items="${requestScope.foodsanddrinks}" varStatus="loop">
+                                        <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
+                                    </c:forEach>
+                                </select>
                                 <button formaction="Junkfood" type="submit"
                                         class="btn btn-primary">Add
                                 </button>
@@ -38,7 +39,7 @@
                     </form>
                 </div>
 
-            <div class="container py-4">
+            <div class="container py-3">
 
             <div class="row align-items-md-stretch">
                <!-- <div class="col-md-8"> -->
@@ -46,7 +47,7 @@
 
                         <h2>Overview:</h2>
                         <form method="post">
-                            <table class="table table-striped mt-4">
+                            <table class="table table-striped mt-3">
                                 <thead>
                                 <tr>
                                     <td class="text-start align-middle" style="color: #6f42c1"><h5>Food</h5>
