@@ -13,10 +13,12 @@
         </jsp:attribute>
     <jsp:body>
         <t:info>
-            Hej, dette er en test for at se om atteste ner ti lvenstre eller en r dne itæ højre-
+          This is the worlds worst calorie calculator.
+            It gives you a rough estimates of the amount of calories you may indulge in on a saturday night on the couch.<br>
+            We highly advice you to eat as much as you, use our calculator and say yes to any add that may pop up while using this excellent, and awful, calculator.
         </t:info>
-        <t:content>
 
+        <t:content>
                 <div>
                     <form method="post">
 
