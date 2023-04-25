@@ -12,12 +12,12 @@ import java.io.IOException;
 @WebServlet(name = "SodaCalculatorServlet", value = "/sodacalculator")
 public class SodaCalculatorServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // gets the parameters from the form
         double soda = Double.parseDouble(request.getParameter("soda"));
         double price = Double.parseDouble(request.getParameter("price"));
@@ -30,6 +30,7 @@ public class SodaCalculatorServlet extends HttpServlet {
         } else {
             // creates a new soda object
             Soda s = new Soda(soda, price);
+
             // sets the attributes for the soda object
             request.setAttribute("sugarFree", sugarFree);
             request.setAttribute("soda", s);
