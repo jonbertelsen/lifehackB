@@ -51,17 +51,26 @@
 </div>
 
 <script>
+    // Get the HTML form element by its ID
     const form = document.getElementById('calc-form');
+    // Get the HTML output element by its ID
     const output = document.getElementById('res');
 
+    // Add an event listener to the form for the 'submit' event
     form.addEventListener('submit', (event) => {
+        // Prevent the default form submission behavior, which would cause a page reload
         event.preventDefault();
+        // Get the value of the 'a' input field and convert it to an integer
         const weight = parseInt(form.a.value);
+        // Get the value of the 'b' input field and convert it to an integer
         const reps = parseInt(form.b.value);
+        // Calculate the one-rep max for the given weight and reps
         const oneRepMax = (weight / (1.0278 - 0.0278 * reps)).toFixed(2);
+        // Set the value of the output element to the one-rep max followed by the string "KG"
         output.value = oneRepMax + " KG";
     });
 </script>
+
 
 </body>
 </html>
