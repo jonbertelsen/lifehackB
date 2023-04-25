@@ -73,7 +73,7 @@ public class RunningCalculatorServlet extends HttpServlet {
                     hours++;
                     minutes -= 60;
                 }
-                seconds = (int) (0.6 * totalTime%1) * 100;
+                seconds = (int) (totalTime%1 * 60);
                 request.setAttribute("hour", hours);
                 request.setAttribute("minute", minutes);
                 request.setAttribute("second", seconds);
@@ -89,7 +89,7 @@ public class RunningCalculatorServlet extends HttpServlet {
                     hours++;
                     minutes -= 60;
                 }
-                seconds = (int) (0.6 * totalTime%1) * 100;
+                seconds = (int) (totalTime%1 * 60);
                 request.setAttribute("hour", hours);
                 request.setAttribute("minute", minutes);
                 request.setAttribute("second", seconds);
@@ -105,7 +105,7 @@ public class RunningCalculatorServlet extends HttpServlet {
                     hours++;
                     minutes -= 60;
                 }
-                seconds = (int) (0.6 * totalTime%1) * 100;
+                seconds = (int) (totalTime%1 * 60);
                 request.setAttribute("hour", hours);
                 request.setAttribute("minute", minutes);
                 request.setAttribute("second", seconds);

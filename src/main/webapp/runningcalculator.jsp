@@ -8,29 +8,12 @@
 <jsp:attribute name="header">
     <title>Running Calculator</title>
 
-     <style>
-         body
-         .background{
-             background-image: url("images/ForestTrail.jpg");
-             height: 100%;
-             background-position:center;
-             background-size:cover;
-         }
-         .no-background{
-             background-image: url("images/blank.png");
-             height: 100%;
-             background-position: center;
-             background-size: cover;
-         }
-
-     </style>
-
 </jsp:attribute>
     <jsp:body>
 
         <t:info>
 
-            <h2 class="card-title, no-background"> Løbe Beregner</h2> <br/>
+            <h2 class="card-title"> Løbe Beregner</h2> <br/>
             <p class="card-text"> Med dette lille program kan du beregne: <br/>
                 * antal af kilometer <br/>
                 * Anslået løbetid<br/>
@@ -41,7 +24,7 @@
 
 
         <t:content>
-            <div class="background, card">
+            <div class="card">
                 <h2 class="text-center pt-5"> Good-To-Calculate</h2>
                 <div class="card-body">
                     <div class="container">
@@ -105,66 +88,25 @@
                                     ********************************************--%>
                                    <td>
                                     <c:if test="${requestScope.calculateDistance}">
-<%--
-                                        <c:if test="${requestScope.hour != 0}">
---%>
-                                            <p class="card-text"> hvis du løber i <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} time(r),</c:if> <c:if test="${requestScope.minute !=0}">${requestScope.minute} minut(ter) og </c:if>${requestScope.second} sekund(er), med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du kunne nå at løbe:
+
+                                        <p class="card-text"> hvis du løber i <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} time(r),</c:if> <c:if test="${requestScope.minute !=0}">${requestScope.minute} minut(ter), </c:if> <c:if test="@${requestScope.second !=0}"> ${requestScope.second} sekund(er)</c:if>, med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du kunne nå at løbe:
                                                 <br/>
                                                 ${requestScope.distance} km </p>
                                         </c:if>
-<%--
-                                        if(${requestScope.hour ==0 && requestScope.minut !=0 }){
-                                        <p class="card-text"> hvis du løber i ${requestScope.minut} minut(ter) og ${requestScope.second} sekund(er), med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du kunne nå at løbe:
-                                            <br/>
-                                                ${requestScope.distance} km </p>
-                                        }
 
-                                        if(${requestScope.hour == 0 && requestScope.minut ==0}){
-                                        <p class="card-text"> hvis du løber i ${requestScope.second} sekund(er), med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du kunne nå at løbe:
-                                            <br/>
-                                                ${requestScope.distance} km </p>
-                                        }
-
-                                    </c:if>
---%>
                                     <c:if test="${requestScope.calculateSpeed}">
-<%--
-                                        if(${requestScope.hour != 0}){
---%>
-                                        <p class="card-text"> Hvis du løber ${requestScope.distance} km, på <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} time(r),</c:if><c:if test="${requestScope.minute !=0}"> ${requestScope.minute} minutter og </c:if> ${requestScope.second} sekunder, så vil din gennemsnitshastighed være:
+
+                                        <p class="card-text"> Hvis du løber ${requestScope.distance} km, på <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} time(r),</c:if><c:if test="${requestScope.minute !=0}"> ${requestScope.minute} minutter, </c:if> <c:if test="${requestScope.second !=0 }"> ${requestScope.second} sekunder</c:if>, så vil din gennemsnitshastighed være:
                                                 <br/>
                                                 ${requestScope.speed} km/t </p>
 
-<%--
-                                        if(${requestScope.hour ==0 && requestScope.minut !=0}){
-                                        <p class="card-text"> Hvis du løber ${requestScope.distance} km, på ${requestScope.minuts} minutter og ${requestScope.second} sekunder, så vil din gennemsnitshastighed være:
-                                            <br/>
-                                                ${requestScope.speed} km/t </p>
-                                        }
 
-                                        if(${requestScope.hour ==0 && requestScope.minut ==0}){
-                                        <p class="card-text"> Hvis du løber ${requestScope.distance} km, på ${requestScope.second} sekunder, så vil din gennemsnitshastighed være:
-                                            <br/>
-                                                ${requestScope.speed} km/t </p>
-                                        }
---%>
                                     </c:if>
 
                                     <c:if test="${requestScope.calculateTime}">
- <%--
-                                        if(${requestScope.hour!=0}){
---%>
+
                                             <p class="card-text"> Hvis du løber ${requestScope.distance} km, med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du løbe i: <br/>
-                                                <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} timer, </c:if> <c:if test="${requestScope.minute !=0}">${requestScope.minute} minutter og</c:if> ${requestScope.second} sekunder</p>
- <%--                                       }
-
-                                        if(${requestScope.hour==0 && requestScope!= 0}){
-                                        <p class="card-text"> Hvis du løber ${requestScope.distance} km, med en gennemsnitshastighed på ${requestScope.speed} km/t, vil du løbe i: <br/>
-                                                ${requestScope.time} minutter </p>
-
-
-                                        }
---%>
+                                                <c:if test="${requestScope.hour !=0}"> ${requestScope.hour} timer, </c:if> <c:if test="${requestScope.minute !=0}">${requestScope.minute} minutter,</c:if> <c:if test="${requestScope.second !=0}">${requestScope.second} sekunder</c:if></p>
 
                                     </c:if>
 
