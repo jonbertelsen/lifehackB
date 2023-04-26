@@ -35,7 +35,7 @@
                                         <option value="${loop.index}">${junk.food} ${junk.kcal}</option>
                                     </c:forEach>
                                 </select>
-                                <button formaction="Junkfood" type="submit"
+                                <button formaction="junkfood" type="submit"
                                         class="btn btn-primary">Add
                                 </button>
                             </div>

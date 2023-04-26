@@ -21,7 +21,9 @@
                 <a class="link" href="${pageContext.request.contextPath}/sodaconsumption.jsp"><li class="list-group-item text-dark">Sodavandsindtag</li></a>
                 <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item text-dark">1rm-beregner</li></a>
                 <a class="link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp"><li class="list-group-item text-dark">Rygestopsberegner</li></a>
-                <a class="link" href="${pageContext.request.contextPath}/Junkfood"><li class="list-group-item text-dark">Junkfood kalorieberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/junkfood"><li class="list-group-item text-dark">Junkfood kalorieberegner</li></a>
+                <a class="link" href="${pageContext.request.contextPath}/lottoNumbers.jsp"><li class="list-group-item text-dark">Lottonumbers calculator</li></a>
+
             </ul>
         </t:content>
     </jsp:body>
