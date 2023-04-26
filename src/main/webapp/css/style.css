@@ -33,10 +33,6 @@ th, td {
     padding:15px;
 }
 
-.btn {
-    background-color: var(--primary) !important;
-}
-
 /* background colors */
 .bg-primary {
     background-color: var(--primary) !important;

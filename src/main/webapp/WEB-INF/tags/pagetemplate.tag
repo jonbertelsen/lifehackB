@@ -24,6 +24,7 @@
         <div class="container">
             <a class="navbar-brand" href="index.jsp">
                 <img src="${pageContext.request.contextPath}/images/cphbusiness.png" width="400px;" class="img-fluid"/>
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                     aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +36,8 @@
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/loancalc.jsp">Låneberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/sodaconsumption.jsp">Sodavandsindtag</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/onerepmax.jsp">1rm-beregner</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp">Rygestopsberegner</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/Junkfood">Junkfood kalorieberegner</a>
                 </div>
             </div>
         </div>
