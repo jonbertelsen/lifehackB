@@ -6,7 +6,7 @@
 <t:pagetemplate>
     <html>
     <head>
-        <title>sodaconsumption</title>
+        <title>Sodaconsumption</title>
     </head>
     <t:info>
     <body>
