@@ -15,12 +15,35 @@ If all goes well - In the end all 3 values (2 entered and 1 calculated) will be 
 2 booleans are also  returned to the jsp page per request object - used to change the page if incorrect input was given.
  */
 
+/**
+ * @author nr.
+ * This servlet functions as the control element between runningcalculator.jsp and RunningCalculator.java.
+ * Since no data needs to be loaded in to run the page the doGet-method remains unused.
+ * The servlet recognises how many inputs the user entered, and if used optimally recognises which variable needs to be calculated.
+ * If all goes well - In the end all 3 values (2 entered and 1 calculated) will be returned to the jsp page per request object.
+ * 2 booleans are also  returned to the jsp page per request object - used to change the page if incorrect input was given
+ */
+
 @WebServlet(name = "RunningCalculator", value = "/runningcalculator")
 public class RunningCalculatorServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
+
+    /**
+     * @author nr.
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     *
+     * The servlet recieves inputs from the user, and forward it to the RunningCalculator class.
+     * The respons is then processed, and assigned to the right requestScope.
+     *
+     * Time is refactored, from a decimal number in minutes to Hour,Minutes and Seconds, and then assigned to its requestScope.
+     * the boolean is set, depending on which input is recieved from the user
+     */
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -38,6 +61,7 @@ public class RunningCalculatorServlet extends HttpServlet {
         int numberOfOptionsChosen = 0;
 
         //Tries to retrieve values from the form - if all is well, it recognises that the value has been parsed and adds to the total number of options chosen.
+
         try {
             distance = Double.parseDouble(request.getParameter("km"));
             distanceChosen = true;
@@ -55,12 +79,15 @@ public class RunningCalculatorServlet extends HttpServlet {
         } catch(NumberFormatException e){}
 
         //If 3 options has been chosen - no calculations will be done - it is forwarded to the jsp page that the input needs to be specified.
+
         if(numberOfOptionsChosen == 3){
             allOptionsChosen = true;
         //If less than 2 options has been chosen - no calculations will be done - it is forwarded to the jsp page that the form requires more information.
+
         } else if(numberOfOptionsChosen < 2){
             notEnoughOptionsChosen = true;
         //Depending on which 2 values were passed to the servlet it will run the calculation for the third and missing value.
+
         } else {
             if(distanceChosen && speedChosen){
                 calculateTime = true;
