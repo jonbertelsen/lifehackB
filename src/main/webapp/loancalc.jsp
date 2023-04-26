@@ -15,16 +15,16 @@
     </jsp:attribute>
 
      <jsp:body>
-       <%-- <t:info>
+       <t:info>
            <h1 class="card-title> Loan calculator </h1>
                <p class="card-text"> This program is designed to show you variations of a loan you have taken or maybe
            will take in the future. The loan calculator is designed to calculate different aspects of your loan
            including, but not limited to, the total cost of the loan, and your interest rate. The program will also
            showcase different prices with a shorter/longer loan period or even a lower APRC. </p>
-        <%-- </t:info> --%>
+        </t:info>
 
 
-        <%-- <t:content> --%>
+        <t:content>
          <%-- Form for user input --%>
         <form action="loancalc" method="POST">
             <div class="form-group">
@@ -85,6 +85,6 @@
 
                 </tr>
             </table>
-    <%-- </t:content> --%>
+    </t:content>
 </jsp:body>
 </t:pagetemplate>
