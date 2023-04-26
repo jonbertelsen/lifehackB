@@ -14,11 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import dat.backend.model.services.BudgetCalculationHelper;
 
-
+/**
+ * Servlet class for handling calculating budgets and downloading them
+ */
 @WebServlet(name = "BudgetCalculateServlet", value = "/budgetcalculate")
 public class BudgetCalculateServlet extends HttpServlet {
 
+
     private List<BudgetListItem> selectedIncomes;
+
     private List<BudgetListItem> selectedExpenses;
     private double balance;
 
