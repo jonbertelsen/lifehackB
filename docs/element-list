@@ -1,7 +1,0 @@
-dat.backend.control
-dat.backend.control.loancalc
-dat.backend.model.config
-dat.backend.model.entities
-dat.backend.model.exceptions
-dat.backend.model.persistence
-dat.backend.model.services
