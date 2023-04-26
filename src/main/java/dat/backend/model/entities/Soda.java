@@ -42,6 +42,11 @@ public class Soda {
         return percentages;
     }
 
+    /**
+     * This method calculates all percentages
+     * @return Returns an ArrayList<double[]>
+     * @author heinLarsen
+     */
     private ArrayList<double[]> calculatePercentages() {
         double litersPerMonth = litersPerDay * 30;
         double litersPerYear = litersPerMonth * 12;

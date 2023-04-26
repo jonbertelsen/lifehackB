@@ -9,6 +9,11 @@ import java.io.IOException;
 
 // This servlet is responsible for calculating the savings and consumption of soda based on the input from the user.
 
+/**
+ * This servlet is responsible for calculating the savings and consumption of soda based on the input from the user.
+ * @author heinLarsen, XXOlsen
+ */
+
 @WebServlet(name = "SodaCalculatorServlet", value = "/sodacalculator")
 public class SodaCalculatorServlet extends HttpServlet {
     @Override
@@ -16,6 +21,14 @@ public class SodaCalculatorServlet extends HttpServlet {
 
     }
 
+    /**
+     * This method receives input parameters as soda, price and sugarFree
+     * @param request
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     * @author heinLarsen, XXOlsen
+     */
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // gets the parameters from the form
