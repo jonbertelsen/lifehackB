@@ -13,8 +13,8 @@
     <form action="sodacalculator" method="post">
         <label for="soda"> Hvor meget sodavand drikker du til daglig?</label>
         <br>
-        <input type="number" class="form-control w-50 d-inline" id="soda" required name="soda" value="soda" placeholder="antal liter">
-        <input type="number" class="form-control w-50 mt-1 d-inline" required name="price" value="price" placeholder="pris pr liter">
+        <input type="number" step="any" class="form-control w-50 d-inline" id="soda" required name="soda" value="soda" placeholder="antal liter">
+        <input type="number" step="any" class="form-control w-50 mt-1 d-inline" required name="price" value="price" placeholder="pris pr liter">
         <br>
         <input type="checkbox" id="sugarFree" name="sugarFree" value="true">
         <label for="sugarFree">Sukkerfri</label>
