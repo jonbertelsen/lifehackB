@@ -14,8 +14,8 @@
     <jsp:body>
         <t:info>
           This is the worlds worst calorie calculator.
-            It gives you a rough estimates of the amount of calories you may indulge in on a saturday night on the couch.<br>
-            We highly advice you to eat as much as you, use our calculator and say yes to any add that may pop up while using this excellent, and awful, calculator.
+            It gives you a rough estimate of the amount of calories you may indulge in on a saturday night on the couch.<br>
+            We highly advice you to eat as much as you can, use our calculator and say yes to any adds that may pop up while using this excellent, and awful, calculator. We're absolutely not making any money off of those.
         </t:info>
 
         <t:content>
