@@ -33,6 +33,7 @@
         ${requestScope.soda.litersPerYear} liter om året.
     <br/>
 
+
     Priser:
     Din sodavandsudgift pr. dag er ${requestScope.soda.pricePerDay} kroner,
     <br>
@@ -40,6 +41,18 @@
     <br>
         ${requestScope.soda.pricePerYear} kroner om året.
     <br/>
+
+    <c:if test="${!requestScope.sugarFree}">
+
+    Kalorier:
+    Du indtager ${requestScope.soda.caloriesPerDay} kalorier pr. dag,
+    <br>
+        ${requestScope.soda.caloriesPerMonth} kalorier om måneden og
+    <br>
+        ${requestScope.soda.caloriesPerYear} kalorier om året.
+    <br/>
+
+    </c:if>
     </t:info>
 
     <t:content>

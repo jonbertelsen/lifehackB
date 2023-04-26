@@ -38,6 +38,18 @@ public class Soda {
         return getLitersPerYear() * pricePerLiter;
     }
 
+    public double getCaloriesPerDay() {
+        return caloriesPerLiter * litersPerDay;
+    }
+
+    public double getCaloriesPerMonth() {
+        return getCaloriesPerDay() * 30;
+    }
+
+    public double getCaloriesPerYear() {
+        return getCaloriesPerMonth() * 12;
+    }
+
     public ArrayList<double[]> getPercentages() {
         return percentages;
     }
