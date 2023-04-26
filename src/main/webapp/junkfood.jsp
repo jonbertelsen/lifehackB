@@ -19,6 +19,9 @@
         </t:info>
 
         <t:content>
+            <!-- In our .jsp site we use a template that we also used in "De-4-Data-Amigos Cupcake project.
+            Unlucky the template did not fit that well into our junkfood page.
+            You can however see the site perfectly, but it's not the most beautiful. -->
                 <div>
                     <form method="post">
 
