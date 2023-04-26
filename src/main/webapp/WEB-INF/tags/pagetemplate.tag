@@ -39,6 +39,7 @@
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp">Rygestopsberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/junkfood">Junkfood kalorieberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/lottoNumbers.jsp">Lotto</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/budgetcalculate">Budget Calculator</a>
                 </div>
             </div>
         </div>

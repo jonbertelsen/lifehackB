@@ -1,0 +1,161 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "dat.backend.control.BudgetCalculateServlet",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_347208044 { 
+   	label=backend
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_134131535 { 
+   	label=model
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   BudgetCalculationHelper133101484[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BudgetCalculationHelper</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ convertBudgetToCSV(incomes: List&lt;BudgetListItem&gt;, expenses: List&lt;BudgetListItem&gt;, balance: double): String</TD></TR>
+<TR><TD ALIGN="LEFT" >+ parseDouble(doubleString: String): double</TD></TR>
+<TR><TD ALIGN="LEFT" >+ stringToInputStream(text: String): InputStream</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+BudgetListItem680542135[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BudgetListItem</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   amount: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   name: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   type: String [0..1]</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+
+subgraph cluster_224024573 { 
+   	label=control
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   BudgetCalculateServlet643236948[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BudgetCalculateServlet</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   balance: double [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedExpenses: List&lt;BudgetListItem&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   selectedIncomes: List&lt;BudgetListItem&gt; [0..*]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" ># doGet(request: HttpServletRequest, response: HttpServletResponse)</TD></TR>
+<TR><TD ALIGN="LEFT" ># doPost(request: HttpServletRequest, response: HttpServletResponse)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ init()</TD></TR>
+<TR><TD ALIGN="LEFT" >- sendDownloadCSVFileFromText(response: HttpServletResponse)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+BudgetCalculateServlet643236948 -> BudgetListItem680542135[label="selectedExpenses
+[0..*]"];
+BudgetCalculateServlet643236948 -> BudgetListItem680542135[label="selectedIncomes
+[0..*]"];
+    
+}
+@enduml
