@@ -16,8 +16,10 @@ public class Junkfood extends HttpServlet {
 
     private ConnectionPool connectionPool;
 
+    // A arraylist to save our selectedChoices to show more than one output after pressing "add".
     ArrayList<FoodAndDrinks> selectedChoices = new ArrayList<>();
 
+    // Our foodObjects. We use these objects' index-number in our code later on.
     final static FoodAndDrinks[] foodObjects = {
             new FoodAndDrinks("Pizza", 600), //0
             new FoodAndDrinks("Burger", 700), //1
@@ -39,10 +41,13 @@ public class Junkfood extends HttpServlet {
         //When the site is sent to client/browser then it will populate 'foodsanddrinks' object with the constant array foodObjects
         request.setAttribute("foodsanddrinks", foodObjects);
         request.setAttribute("selectedChoices",selectedChoices);
+        // To get the total Kcal, we use a new variable called "sum", we set this variable to be 0, and then using a for-each loop that loops
+        // through the selectedChoices, and automatic updates the total kcal.
         int sum = 0;
         for (FoodAndDrinks item:selectedChoices) {
             sum += item.getKcal();
         }
+        // We set the attribute totalKcal to be equals sum, to "automatic" update the totalKcal.
         request.setAttribute("totalKcal", sum);
         request.getRequestDispatcher("junkfood.jsp").forward(request, response);
 
@@ -50,8 +55,13 @@ public class Junkfood extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // To avoid the foodObjects and selectedChoices to be duplicated everytime we reload the site, we use this
+        // band-aid fix, and reloads the site.
+        // The reason for why this is a bad idea is because
         request.setAttribute("foodsanddrinks", foodObjects);
 
+        // As told earlier, we use the Index of the Objects, and by doing that we make a new variable called selectedObjectIndex
+        // that we make into a Interger, with the parameter called "junk", we use that "junk" in our fastfood.jsp site.
         int selectedObjectIndex = Integer.parseInt(request.getParameter("junk"));
         FoodAndDrinks selectedObject = foodObjects[selectedObjectIndex];
         selectedChoices.add(selectedObject);

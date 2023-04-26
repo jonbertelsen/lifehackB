@@ -1,5 +1,7 @@
 package dat.backend.model.entities;
 
+// This class contains our variables, and a constructor for later use.
+
 public class FoodAndDrinks {
     private String food;
     private int kcal;
