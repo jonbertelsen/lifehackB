@@ -1,10 +1,22 @@
 package dat.backend.model.entities;
 
+/**
+ * This is the class for our loan calculator that handles
+ * the heavy lifting in terms of equations and general calculations.
+ */
+
 public class LoanCalculator {
 
     private double loanSize;
     private double loanLength;
     private double loanAPRC;
+
+    /**
+     * This method recalculates a user input to months if they have
+     * ticked the box called "years" on the website.
+     * @param loanLength this is the duration of the loan taken by the user
+     * @return returns how many months their year input is equal to
+     */
 
     public static double recalculateToMonths(double loanLength) {
         return loanLength*12;
@@ -21,6 +33,13 @@ public class LoanCalculator {
         return interestPowerOfLength;
     }
 
+    /**
+     * This method calculates the monthly payment.
+     * @param loanSize this is the size of the actual loan taken by the user
+     * @param loanLength this is the duration of the loan taken by the user
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return it will return the monthly payment.
+     */
     public static double findMonthlyPayment(double loanSize, double loanLength, double loanAPRC) {
         double monthlyPayment;
          double interest = recalculateInterest(loanAPRC);
@@ -32,6 +51,14 @@ public class LoanCalculator {
         return monthlyPayment;
     }
 
+    /**
+     * This method calculates the total cost of the loan. It will be the actual loan size plus the
+     * interest.
+     * @param loanSize this is the size of the actual loan taken by the user
+     * @param loanLength this is the duration of the loan taken by the user
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return it will return the total cost of the whole loan.
+     */
     public static double totalCostOfLoan(double loanSize, double loanLength, double loanAPRC) {
         //calculating how much you have to pay back for the whole loan
 
@@ -49,6 +76,15 @@ public class LoanCalculator {
 
         return monthlyPayment*loanLength;
     }
+
+    /**
+     * This method will calculate the total cost of the loan if the loan length were to be
+     * cut by a third
+     * @param loanSize this is the size of the actual loan taken by the user
+     * @param loanLength this is the duration of the loan taken by the user
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return it will return the total cost of the loan with the length cut by a third
+     */
 
     public static double totalCostWithLowerLength(double loanSize, double loanLength, double loanAPRC) {
         double newLoanLength = loanLength - (loanLength/3);

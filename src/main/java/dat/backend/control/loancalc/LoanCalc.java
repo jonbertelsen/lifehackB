@@ -1,5 +1,11 @@
 package dat.backend.control.loancalc;
 
+/**
+ * The LoanCalc servlet controls the flow of information between
+ * the backend and frontend. It receives input from the user and
+ * runs methods from the LoanCalculator entity and returns the output.
+ */
+
 import dat.backend.model.entities.LoanCalculator;
 
 import javax.servlet.*;
