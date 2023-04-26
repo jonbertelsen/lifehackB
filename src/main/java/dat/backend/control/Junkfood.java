@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "Junkfood", value = "/Junkfood")
+@WebServlet(name = "Junkfood", value = "/junkfood")
 public class Junkfood extends HttpServlet {
 
     private ConnectionPool connectionPool;
