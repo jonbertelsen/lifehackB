@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class SmokeStopCalculatorJSP {
+}
+
+class SmokeStopCalculatorServlet {
+    +doPost(HttpServletRequest, HttpServletResponse)
+}
+
+class SmokeStopCalculator {
+    -cigarettesPerDay: int
+    -pricePerCigarette: double
+    -totalSavedADay: double
+    -totalSavedAMonth: double
+    -totalSavedAYear: double
+    +SmokeStopCalculator(int, double)
+    +savingPerDay(): double
+    +savingPerMonth(): double
+    +savingPerYear(): double
+    +calculateSavingsPercentageAYear(int): double
+    +cigarettesAfterCuttingPercentage(int): double
+}
+
+class SmokeStopCalculatorException {
+    +SmokeStopCalculatorException(String)
+}
+
+SmokeStopCalculatorJSP --> SmokeStopCalculatorServlet
+SmokeStopCalculatorServlet --> SmokeStopCalculator
+SmokeStopCalculator --> SmokeStopCalculatorException
+@enduml
+

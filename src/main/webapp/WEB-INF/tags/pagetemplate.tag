@@ -36,7 +36,10 @@
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/loancalc.jsp">Låneberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/sodaconsumption.jsp">Sodavandsindtag</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/onerepmax.jsp">1rm-beregner</a>
+
+
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp">Rygestopsberegner</a>
+
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/junkfood">Junkfood kalorieberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/lottoNumbers.jsp">Lotto</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/budgetcalculate">Budget Calculator</a>
