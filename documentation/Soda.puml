@@ -1,0 +1,12 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class Soda{
+- double litersPerDay;
+- double pricePerLiter;
+- ArrayList<double[] percentages;
+- double caloriesPerLiter = 38;
+- ArrayList<double[]> calculatePercentages()
+}
+
+@enduml
