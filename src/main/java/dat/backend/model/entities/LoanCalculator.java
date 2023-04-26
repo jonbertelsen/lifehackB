@@ -22,10 +22,24 @@ public class LoanCalculator {
         return loanLength*12;
     }
 
+    /**
+     * This mehtod calculates monthly interest instead of yearly interest
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return monthly interest
+     */
+
     private static double recalculateInterest(double loanAPRC){
         double interest;
         return interest = (loanAPRC/100)/12;
     }
+
+    /**
+     * This method is only to calculate a small part needed to find monthly payments
+     * puts (1+APRC) in the power of loanlength / (1+APRC)^loanLength
+     * @param loanLength this is the duration of the loan taken by the user
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return the value of (1+APRC)^loanLength
+     */
 
     private static double findInterestPowerOfLength(double loanLength, double loanAPRC) {
         //calculates (1+i)^n :)
@@ -67,6 +81,13 @@ public class LoanCalculator {
         return monthlyPayment * loanLength;
     }
 
+    /**
+     * this method calculates what the loan would look like if the interest was lower (-50%)
+     * @param loanSize this is the size of the actual loan taken by the user
+     * @param loanLength this is the duration of the loan taken by the user
+     * @param loanAPRC this is the APRC (interest) og the loan
+     * @return it will return the total cost of the loan with the interest cut in half
+     */
 
     public static double totalCostWithLowerAPRC(double loanSize, double loanLength, double loanAPRC) {
         double newAPRC = loanAPRC-(loanAPRC/2);
