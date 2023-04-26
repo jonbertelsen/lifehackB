@@ -38,6 +38,8 @@
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/onerepmax.jsp">1rm-beregner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp">Rygestopsberegner</a>
                     <a class="nav-item nav-link" href="${pageContext.request.contextPath}/Junkfood">Junkfood kalorieberegner</a>
+                    <a class="nav-item nav-link" href="${pageContext.request.contextPath}/budgetcalculate">Budget Calculator</a>
+
                 </div>
             </div>
         </div>

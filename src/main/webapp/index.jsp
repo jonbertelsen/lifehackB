@@ -22,6 +22,7 @@
                 <a class="link" href="${pageContext.request.contextPath}/onerepmax.jsp"><li class="list-group-item text-dark">1rm-beregner</li></a>
                 <a class="link" href="${pageContext.request.contextPath}/smokestopcalculator.jsp"><li class="list-group-item text-dark">Rygestopsberegner</li></a>
                 <a class="link" href="${pageContext.request.contextPath}/Junkfood"><li class="list-group-item text-dark">Junkfood kalorieberegner</li></a>
+                <a class="nav-item nav-link" href="${pageContext.request.contextPath}/budgetcalculate">Budget Calculator</a>
             </ul>
         </t:content>
     </jsp:body>
