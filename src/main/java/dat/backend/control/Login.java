@@ -14,6 +14,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+
+/**
+ * Servlet class for handling login
+ * @author jobe
+ */
 @WebServlet(name = "login", urlPatterns = {"/login"} )
 public class Login extends HttpServlet
 {
@@ -31,6 +36,14 @@ public class Login extends HttpServlet
         response.sendRedirect("index.jsp");
     }
 
+    /**
+     * This method receives input parameters as login and password
+     * @param request holds login and password from input form in jsp page
+     * @param response
+     * @throws IOException This will happen if .....
+     * @throws ServletException
+     * @author jobe
+     */
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {
         response.setContentType("text/html");
