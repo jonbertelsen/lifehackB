@@ -1,0 +1,10 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+Class RunningCalculator{
++ static double calculateDistance(int time, double speed)
++ static double calculateTime(double distance, double speed)
++ static double calculateSpeed(double distance, int time)
+}
+
+@enduml

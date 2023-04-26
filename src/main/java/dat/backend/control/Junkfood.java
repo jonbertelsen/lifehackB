@@ -82,6 +82,6 @@ public class Junkfood extends HttpServlet {
         selectedChoices.add(selectedObject);
 
 
-        response.sendRedirect("Junkfood");
+        response.sendRedirect("junkfood");
     }
 }
