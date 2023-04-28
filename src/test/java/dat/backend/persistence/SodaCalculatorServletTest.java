@@ -2,9 +2,10 @@ package dat.backend.persistence;
 
 import dat.backend.control.SodaCalculatorServlet;
 import dat.backend.model.entities.Soda;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -25,18 +26,18 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 
-@RunWith(MockitoJUnitRunner.class)
+
 public class SodaCalculatorServletTest {
 
-    private SodaCalculatorServlet servlet;
+    private static SodaCalculatorServlet servlet;
     @Mock
-    private HttpServletRequest request;
-    @Mock private HttpServletResponse response;
-    @Mock private RequestDispatcher requestDispatcher;
-    @Mock private ServletContext servletContext;
-    @Mock private HttpSession session;
+    private static HttpServletRequest request;
+    @Mock private static HttpServletResponse response;
+    @Mock private static RequestDispatcher requestDispatcher;
+    @Mock private static ServletContext servletContext;
+    @Mock private static HttpSession session;
 
-    @Before
+    @BeforeEach
     public void setUp() throws ServletException {
         servlet = new SodaCalculatorServlet();
         MockitoAnnotations.openMocks(this);

@@ -1,4 +1,4 @@
 /**
- * Controller part of MVC. Hold all servlets in application
+ * Controller part of MVC. Holds all servlets in application
  */
 package dat.backend.control;
